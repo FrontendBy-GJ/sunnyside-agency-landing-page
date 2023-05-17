@@ -2,6 +2,10 @@ import logo from './assets/logo.svg';
 import { AiOutlineMenu } from 'react-icons/ai';
 import header from './assets/mobile/image-header.jpg';
 import { HiOutlineArrowNarrowDown } from 'react-icons/hi';
+import egg from './assets/mobile/image-transform.jpg';
+import cup from './assets/mobile/image-stand-out.jpg';
+import cherries from './assets/mobile/image-graphic-design.jpg';
+import orange from './assets/mobile/image-photography.jpg';
 import { useState } from 'react';
 
 function App() {
@@ -61,6 +65,80 @@ function App() {
           </header>
           <HiOutlineArrowNarrowDown className="mx-auto mt-5 h-[150px] w-full text-white" />
         </div>
+
+        <section id="about">
+          <div className="flex flex-col-reverse text-center">
+            <div className="px-4 py-20">
+              <h2 className="font-Fraunces text-4xl font-black">
+                Transform your brand
+              </h2>
+              <p className="my-5 font-Barlow text-lg tracking-wide text-slate-400">
+                We are a full-service creative agency specializing in helping
+                brands grow fast. Engage your clients through compelling visuals
+                that do most of the marketing for you.
+              </p>
+              <a
+                className="relative font-Fraunces text-lg font-black uppercase after:absolute after:-inset-x-2 after:bottom-0 after:-z-10 after:h-3 after:translate-y-1 after:rounded after:bg-yellow-300/50 after:transition-colors after:hover:bg-yellow-300"
+                href="#"
+              >
+                Learn more
+              </a>
+            </div>
+            <img src={egg} alt="egg casting shadow on yellow background" />
+          </div>
+
+          <div className="flex flex-col-reverse text-center">
+            <div className="px-4 py-20">
+              <h2 className="font-Fraunces text-4xl font-black">
+                Stand out the right audience
+              </h2>
+              <p className="my-5 font-Barlow text-lg tracking-wide text-slate-400">
+                Using a collaborative formula of designers, researchers,
+                photographers, videographers, and copywriters, we’ll build and
+                extend your brand in digital places.
+              </p>
+              <a
+                className="relative font-Fraunces text-lg font-black uppercase after:absolute after:-inset-x-2 after:bottom-0 after:-z-10 after:h-3 after:translate-y-1 after:rounded after:bg-red-300/50 after:transition-colors after:hover:bg-red-300"
+                href="#"
+              >
+                Learn more
+              </a>
+            </div>
+            <img src={cup} alt="egg casting shadow on yellow background" />
+          </div>
+        </section>
+
+        <section id="services" className="h-screen">
+          <div
+            style={{ backgroundImage: `url(${cherries})` }}
+            className="relative h-2/3 bg-cover bg-top"
+          >
+            <div className="absolute bottom-20 px-4 text-center">
+              <h3 className="font-Fraunces text-2xl font-black text-slate-700">
+                Graphic Design
+              </h3>
+              <p className="mt-5 font-Barlow text-slate-600">
+                Great design makes you memorable. We deliver artwork that
+                underscores your brand message and captures potential clients’
+                attention.
+              </p>
+            </div>
+          </div>
+          <div
+            style={{ backgroundImage: `url(${orange})` }}
+            className="relative h-2/3 w-full bg-cover bg-top"
+          >
+            <div className="absolute bottom-20 px-4 text-center">
+              <h3 className="font-Fraunces text-2xl font-black text-slate-700">
+                Photography
+              </h3>
+              <p className="mt-5 font-Barlow text-slate-600">
+                Increase your credibility by getting the most stunning,
+                high-quality photos that improve your business image.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
