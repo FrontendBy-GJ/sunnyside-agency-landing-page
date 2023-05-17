@@ -47,7 +47,12 @@ function App() {
                       <ul className="space-y-8 font-Barlow text-lg font-semibold text-slate-400">
                         {navLinks.map((link) => (
                           <li key={link}>
-                            <a href="#">{link}</a>
+                            <a
+                              href={`#${link.toLowerCase()}`}
+                              onClick={toggleMenu}
+                            >
+                              {link}
+                            </a>
                           </li>
                         ))}
                       </ul>
@@ -78,6 +83,7 @@ function App() {
                 that do most of the marketing for you.
               </p>
               <a
+                aria-label="Learn more about transforming your brand"
                 className="relative font-Fraunces text-lg font-black uppercase after:absolute after:-inset-x-2 after:bottom-0 after:-z-10 after:h-3 after:translate-y-1 after:rounded after:bg-yellow-300/50 after:transition-colors after:hover:bg-yellow-300"
                 href="#"
               >
@@ -98,6 +104,7 @@ function App() {
                 extend your brand in digital places.
               </p>
               <a
+                aria-label="Learn more about standing out to the right audience"
                 className="relative font-Fraunces text-lg font-black uppercase after:absolute after:-inset-x-2 after:bottom-0 after:-z-10 after:h-3 after:translate-y-1 after:rounded after:bg-red-300/50 after:transition-colors after:hover:bg-red-300"
                 href="#"
               >
