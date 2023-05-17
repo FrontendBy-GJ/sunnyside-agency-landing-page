@@ -6,7 +6,11 @@ import egg from './assets/mobile/image-transform.jpg';
 import cup from './assets/mobile/image-stand-out.jpg';
 import cherries from './assets/mobile/image-graphic-design.jpg';
 import orange from './assets/mobile/image-photography.jpg';
+import emily from './assets/image-emily.jpg';
+import thomas from './assets/image-thomas.jpg';
+import jennie from './assets/image-jennie.jpg';
 import { useState } from 'react';
+import Testimonial from './components/Testimonial';
 
 function App() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -14,6 +18,32 @@ function App() {
   const toggleMenu = () => setOpenMenu((prev) => !prev);
 
   const navLinks = ['About', 'Services', 'Projects'];
+
+  const testimonials = [
+    {
+      img: emily,
+      quote:
+        'We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.',
+      name: 'Emily R.',
+      jobTitle: 'Marketing Director',
+    },
+
+    {
+      img: thomas,
+      quote:
+        'Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.',
+      name: 'Thomas S.',
+      jobTitle: 'Chief Operating Officer',
+    },
+
+    {
+      img: jennie,
+      quote:
+        'Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!',
+      name: 'Jennie F.',
+      jobTitle: 'Business Owner',
+    },
+  ];
 
   return (
     <div className="mx-auto max-w-[1440px]">
@@ -115,10 +145,10 @@ function App() {
           </div>
         </section>
 
-        <section id="services" className="h-screen">
+        <section id="services">
           <div
             style={{ backgroundImage: `url(${cherries})` }}
-            className="relative h-2/3 bg-cover bg-top"
+            className="relative min-h-[600px] bg-cover bg-top"
           >
             <div className="absolute bottom-20 px-4 text-center">
               <h3 className="font-Fraunces text-2xl font-black text-slate-700">
@@ -133,7 +163,7 @@ function App() {
           </div>
           <div
             style={{ backgroundImage: `url(${orange})` }}
-            className="relative h-2/3 w-full bg-cover bg-top"
+            className="relative min-h-[600px] bg-cover bg-top"
           >
             <div className="absolute bottom-20 px-4 text-center">
               <h3 className="font-Fraunces text-2xl font-black text-slate-700">
@@ -145,6 +175,22 @@ function App() {
               </p>
             </div>
           </div>
+        </section>
+
+        <section className="space-y-14 px-10 py-16">
+          <h3 className="text-center font-Fraunces uppercase tracking-[4px] text-slate-400">
+            Client testimonials
+          </h3>
+
+          {testimonials.map((client) => (
+            <Testimonial
+              key={client.name}
+              img={client.img}
+              quote={client.quote}
+              name={client.name}
+              jobTitle={client.jobTitle}
+            />
+          ))}
         </section>
       </main>
     </div>
