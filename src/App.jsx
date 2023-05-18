@@ -222,7 +222,12 @@ function App() {
             <ul className="mb-16 mt-7 flex space-x-16 font-Barlow text-teal-600">
               {navLinks.map((link) => (
                 <li key={link}>
-                  <a href={`#${link.toLowerCase()}`}>{link}</a>
+                  <a
+                    href={`#${link.toLowerCase()}`}
+                    className="transition-colors hover:text-white"
+                  >
+                    {link}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -235,7 +240,11 @@ function App() {
                 <BsPinterest size={20} />,
               ].map((social, index) => (
                 <li key={index}>
-                  <a href="#" onClick={(e) => e.preventDefault()}>
+                  <a
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                    className="transition-colors hover:text-white"
+                  >
                     {social}
                   </a>
                 </li>
