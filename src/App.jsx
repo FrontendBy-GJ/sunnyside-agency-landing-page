@@ -1,5 +1,11 @@
 import logo from './assets/logo.svg';
-import { AiOutlineMenu } from 'react-icons/ai';
+import {
+  AiFillFacebook,
+  AiOutlineInstagram,
+  AiOutlineMenu,
+  AiOutlineTwitter,
+} from 'react-icons/ai';
+import { BsPinterest } from 'react-icons/bs';
 import header from './assets/mobile/image-header.jpg';
 import { HiOutlineArrowNarrowDown } from 'react-icons/hi';
 import egg from './assets/mobile/image-transform.jpg';
@@ -9,8 +15,13 @@ import orange from './assets/mobile/image-photography.jpg';
 import emily from './assets/image-emily.jpg';
 import thomas from './assets/image-thomas.jpg';
 import jennie from './assets/image-jennie.jpg';
+import milkBottles from './assets/mobile/image-gallery-milkbottles.jpg';
+import orangeHalf from './assets/mobile/image-gallery-orange.jpg';
+import cone from './assets/mobile/image-gallery-cone.jpg';
+import sugarCubes from './assets/mobile/image-gallery-sugar-cubes.jpg';
 import { useState } from 'react';
 import Testimonial from './components/Testimonial';
+import Logo from './assets/Logo';
 
 function App() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -50,7 +61,7 @@ function App() {
       <main>
         <div
           style={{ backgroundImage: `url(${header})` }}
-          className="relative h-[60vh] w-full bg-cover bg-center"
+          className="relative min-h-[80vh] w-full bg-cover bg-center"
         >
           <header className="relative px-5 py-8">
             <div className="flex items-center justify-between ">
@@ -192,6 +203,46 @@ function App() {
             />
           ))}
         </section>
+
+        <div className="grid grid-cols-2">
+          <div>
+            <img src={milkBottles} alt="milk bottles" />
+            <img src={cone} alt="waffle cone" />
+          </div>
+          <div>
+            <img src={orangeHalf} alt="half an orange on a plate" />
+            <img src={sugarCubes} alt="stacked sugar cubes" />
+          </div>
+        </div>
+
+        <footer className="bg-emerald-200">
+          <div className="flex flex-col items-center">
+            <Logo className="mt-12 text-teal-700" />
+
+            <ul className="mb-16 mt-7 flex space-x-16 font-Barlow text-teal-600">
+              {navLinks.map((link) => (
+                <li key={link}>
+                  <a href={`#${link.toLowerCase()}`}>{link}</a>
+                </li>
+              ))}
+            </ul>
+
+            <ul className="flex space-x-5 pb-20 text-teal-700">
+              {[
+                <AiFillFacebook size={20} />,
+                <AiOutlineInstagram size={20} />,
+                <AiOutlineTwitter size={20} />,
+                <BsPinterest size={20} />,
+              ].map((social, index) => (
+                <li key={index}>
+                  <a href="#" onClick={(e) => e.preventDefault()}>
+                    {social}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </footer>
       </main>
     </div>
   );
