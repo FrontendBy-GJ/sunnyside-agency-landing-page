@@ -22,6 +22,7 @@ import sugarCubes from './assets/mobile/image-gallery-sugar-cubes.jpg';
 import { useState } from 'react';
 import Testimonial from './components/Testimonial';
 import Logo from './assets/Logo';
+import AboutCard from './components/AboutCard';
 
 function App() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -113,47 +114,27 @@ function App() {
         </div>
 
         <section id="about">
-          <div className="flex flex-col-reverse text-center">
-            <div className="px-4 py-20">
-              <h2 className="font-Fraunces text-4xl font-black">
-                Transform your brand
-              </h2>
-              <p className="my-5 font-Barlow text-lg tracking-wide text-slate-400">
-                We are a full-service creative agency specializing in helping
-                brands grow fast. Engage your clients through compelling visuals
-                that do most of the marketing for you.
-              </p>
-              <a
-                aria-label="Learn more about transforming your brand"
-                className="relative font-Fraunces text-lg font-black uppercase after:absolute after:-inset-x-2 after:bottom-0 after:-z-10 after:h-3 after:translate-y-1 after:rounded after:bg-yellow-300/50 after:transition-colors after:hover:bg-yellow-300"
-                href="#"
-              >
-                Learn more
-              </a>
-            </div>
-            <img src={egg} alt="egg casting shadow on yellow background" />
-          </div>
+          <AboutCard
+            title={'Transform your brand'}
+            text={
+              'We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.'
+            }
+            ariaLabel={'transforming your brand'}
+            linkColor={'yellow'}
+            img={egg}
+            alt={'egg casting shadowon yellow background'}
+          />
 
-          <div className="flex flex-col-reverse text-center">
-            <div className="px-4 py-20">
-              <h2 className="font-Fraunces text-4xl font-black">
-                Stand out the right audience
-              </h2>
-              <p className="my-5 font-Barlow text-lg tracking-wide text-slate-400">
-                Using a collaborative formula of designers, researchers,
-                photographers, videographers, and copywriters, we’ll build and
-                extend your brand in digital places.
-              </p>
-              <a
-                aria-label="Learn more about standing out to the right audience"
-                className="relative font-Fraunces text-lg font-black uppercase after:absolute after:-inset-x-2 after:bottom-0 after:-z-10 after:h-3 after:translate-y-1 after:rounded after:bg-red-300/50 after:transition-colors after:hover:bg-red-300"
-                href="#"
-              >
-                Learn more
-              </a>
-            </div>
-            <img src={cup} alt="egg casting shadow on yellow background" />
-          </div>
+          <AboutCard
+            title={'Stand out the right audience'}
+            text={
+              'Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places.'
+            }
+            ariaLabel={'standing out to the right audience'}
+            linkColor={'red'}
+            img={cup}
+            alt={'red cup'}
+          />
         </section>
 
         <section id="services">
