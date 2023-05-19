@@ -8,5 +8,5 @@ export default {
       Fraunces: ['Fraunces', 'serif'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/container-queries')],
 };
