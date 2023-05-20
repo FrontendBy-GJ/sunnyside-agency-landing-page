@@ -39,6 +39,29 @@ function App() {
     },
   ];
 
+  const imageData = [
+    {
+      img: images.milkBottles,
+      imgDesktop: images.milkBottlesDesktop,
+      alt: 'milk bottles',
+    },
+    {
+      img: images.orangeHalf,
+      imgDesktop: images.orangeHalfDesktop,
+      alt: 'half an orange on a plate',
+    },
+    {
+      img: images.cone,
+      imgDesktop: images.coneDesktop,
+      alt: 'waffle cone',
+    },
+    {
+      img: images.sugarCubes,
+      imgDesktop: images.sugarCubesDesktop,
+      alt: 'stacked sugar cubes',
+    },
+  ];
+
   return (
     <>
       <main className="@container">
@@ -185,49 +208,20 @@ function App() {
         </section>
 
         <section id="projects" className="grid grid-cols-2 @5xl:grid-cols-4">
-          <img
-            className="h-full w-full object-cover @5xl:hidden"
-            src={images.milkBottles}
-            alt="milk bottles"
-          />
-          <img
-            className="hidden h-full w-full object-cover @5xl:block"
-            src={images.milkBottlesDesktop}
-            alt="milk bottles"
-          />
-
-          <img
-            className="h-full w-full object-cover @5xl:hidden"
-            src={images.orangeHalf}
-            alt="half an orange on a plate"
-          />
-          <img
-            className="hidden h-full w-full object-cover @5xl:block"
-            src={images.orangeHalfDesktop}
-            alt="half an orange on a plate"
-          />
-
-          <img
-            className="h-full w-full object-cover @5xl:hidden"
-            src={images.cone}
-            alt="waffle cone"
-          />
-          <img
-            className="hidden h-full w-full object-cover @5xl:block"
-            src={images.coneDesktop}
-            alt="waffle cone"
-          />
-
-          <img
-            className="h-full w-full object-cover @5xl:hidden"
-            src={images.sugarCubes}
-            alt="stacked sugar cubes"
-          />
-          <img
-            className="hidden h-full w-full object-cover @5xl:block"
-            src={images.sugarCubesDesktop}
-            alt="stacked sugar cubes"
-          />
+          {imageData.map(({ img, imgDesktop, alt }) => (
+            <>
+              <img
+                src={img}
+                alt={alt}
+                className="h-full w-full object-cover @5xl:hidden"
+              />
+              <img
+                src={imgDesktop}
+                alt={alt}
+                className="hidden h-full w-full object-cover @5xl:block"
+              />
+            </>
+          ))}
         </section>
       </main>
 
