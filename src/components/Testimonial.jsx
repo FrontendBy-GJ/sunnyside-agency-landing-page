@@ -1,6 +1,6 @@
 const Testimonial = ({ img, quote, name, jobTitle }) => {
   return (
-    <div className="text-center">
+    <div className="text-center @5xl:max-w-xs">
       <img
         src={img}
         alt={name}
